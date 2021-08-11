@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- This sets the website to be the screen width and scale to 100%  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Uses styles.css class -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* This is a tag selector, highlighting anything starting with img */
+        img{
+            border: solid 10px #777
+        }
+
+        /* This is a class selector, more specific */
+        .tutorial{
+            border: solid 10px #777 
+        }
+
+        /* This is a ID selector where you can set background color */
+        #tutorial-1{
+            background-color: rgb(243, 12, 12);
+        }
+
+        /* This is an attribute selector to target specific attributes*/
+        img[src="DSCN6429 (2).JPG"]{
+            border: solid 3px #39f;
+        }
+
+        /* This is a selector list, combining other selectors with comma */
+        .tutorial,h1{
+            color: rgb(30, 211, 75);
+        }
+
+        /* This is a combinator. '>' means all of something, in this case p */
+        .tutorial > p{
+            font-size: 3em;
+        }
+
+        p{
+            display: inline;
+            width: 100px;
+            border: solid 1px #333
+        }
+
+        /* This creates a button */
+        .button{
+            display: inline;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        /* Using Flexbox to create columns that can take up equal space */
+        .button{
+            border: solid 1px #39f;
+            display: flex;
+        }
+
+        .button > div{
+            border: solid 1px #777;
+            flex: 1;
+        }
+
+        /* Using Flexbox so that the 2nd element takes up more space */
+        .button > div:nth-of-type(2){
+            flex:2;
+        }
+
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Title: Introduction to HTML/CSS</h1>
+    <p>Lets gooo</p>
+    <div class="tutorial" id="tutorial-1">
+        <!-- This img contains an id and class selector  -->
+        <img src="DSCN6429 (2).JPG" alt="Derek Picture" width=25% height=auto>
+        <p>To begin with tutorial 1...</p>
+    </div>
+
+    <div class="tutorial" id="tutorial-1">
+        <h2>Learning to code</h2>
+        <img src="https://via.placeholder.com">
+        <p>To begin with tutorial 2...</p>
+    </div>
+
+    <div class="button">
+        <div>Column 1</div>
+        <div>Column 2</div>
+        <div>Column 3</div>
+    </div>
+</body>
+</html>
