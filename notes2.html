@@ -34,10 +34,28 @@
     <div class="desktop">Desktop</div>
     <div class="mobile">Mobile</div>
     <div class="print">Print</div>
-
-    <!-- script allows for JavaScript to be written in an HTML file -->
-    <script>
-        let x = "Hi"
-    </script>
 </body>
+
+<section id = "derek-sheen" class = "card">
+    <h1>Derek Sheen</h1>
+    <ul>
+        <!-- target="_blank" allows for links that are clicked to open a new tab -->
+        <li><a href="https://github.com/derek-byte" class="tag" target="_blank">Github</a></li>
+        <li><a href="https://ca.linkedin.com/in/derek-sheen" class="tag" target="_blank">Linkedin</a></li>
+    </ul>
+</section>
+
+<!-- script allows for JavaScript to be written in an HTML file -->
+<script>
+    let links = document.querySelectorAll(".tag")
+    links.forEach(function(link) {
+        link.setAttribute("target", "_blank");
+    });
+    // Selecting a class name through classList
+    let card = document.querySelector(".card");
+    card.classList.add("dark");
+</script>
+<!-- We can call a JavaScript file -->
+<script src="notes.js" type="text/javascript"></script>
+
 </html>
