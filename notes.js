@@ -69,3 +69,28 @@ days.forEach(function(day, index){
     // iterates through array printing out the value/day and the index 
     console.log(`day: ${day} index: ${index}`);
 });
+
+
+window.addEventListener("orientationchange", function(e) {
+    let screen = window.screen;
+    let angle = screen.orientation.angle;
+    let type = screen.orientation.type;
+    console.log(`angle ${angle}, type: ${type}`);
+});
+
+// Uses to store information with a key and value
+let value = localStorage.setItem(" ", {});
+// Call on storage value by using key
+let othervalue = localStorage.getItem(" ");
+
+// Asks for location of user
+window.navigator.geolocation.getCurrentPosition(
+    // function when you get location
+    function(position) {
+        console.log(`latitude: ${position.coords.latitude}`)
+        console.log(`longitude: ${position.coords.longitude}`)
+    },
+    // function for when you don't get location 
+    function(error) {
+        console.log("Error or user did not share location")
+    });

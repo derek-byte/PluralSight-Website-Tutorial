@@ -60,4 +60,32 @@
         </nav>
     </footer>
 </body>
+<script>
+    window.addEventListener("DOMContentLoaded", function(e) {
+        const orderButtons = document.querySelectorAll("button[data-order]");
+        orderButtons.forEach(function(button){
+            button.addEventListener("click", function(e){
+                // .currentTarget give a reference of the HTML element of the button we just clicked on to request information of the parent element
+                const button = e.currentTarget;
+                // parentNode retrieves information about the parent 
+                const container = button.parentNode;
+
+                const order = {
+                    id:button.getAttribute("data-order"),
+                    // Find info using a query and getting the inner text
+                    title:container.querySelector(".title").innerText,
+                    price:container.querySelector(".price").innerText,
+                    desc:container.querySelector(".desc").innerText
+                }
+
+                // Use JSON aka JavaScript Object Notation to change order element to string 
+                localStorage.setItem("order", JSON.stringify(order));
+                // Changes the link address saying pies.html to change to order.html
+                const url = window.location.href.replace("pies.html", "order.html");
+                // Actually changes the window to the new url
+                window.location.href = url;
+            })
+        })
+    });
+</script>
 </html>

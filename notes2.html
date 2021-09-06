@@ -45,6 +45,7 @@
     </ul>
 </section>
 
+<button id="click-me">Click Me</button>
 <!-- script allows for JavaScript to be written in an HTML file -->
 <script>
     let links = document.querySelectorAll(".tag")
@@ -54,8 +55,24 @@
     // Selecting a class name through classList
     let card = document.querySelector(".card");
     card.classList.add("dark");
+
+    // This is a addEventListner which does things once something is done, like the page loading
+    window.addEventListener("DOMContentLoaded", function(e){
+        console.log("The page is loaded.");
+
+        let btn = document.querySelector("#click-me");
+        btn.addEventListener("click", function(e){
+            console.log("The button was clicked.")
+        });
+    });
 </script>
 <!-- We can call a JavaScript file -->
 <script src="notes.js" type="text/javascript"></script>
+
+<!-- HTML form; action is where to take info and display inputs for user -->
+<form action="" method="POST">
+    <input type="text" id="full-name" name="full-name">
+    <input type="submit" name="submit" id="submit">
+</form>
 
 </html>
